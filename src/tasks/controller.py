@@ -1,7 +1,10 @@
 from src.tasks.dtos import TaskSchema
 from sqlalchemy.orm import Session
 from src.tasks.models import TaskModel
+<<<<<<< HEAD
 from fastapi import HTTPException
+=======
+>>>>>>> 1d515bba65edb3354eab3b22e65f162bf92477f0
 
 
 def create_task(body: TaskSchema, db: Session):
@@ -17,6 +20,7 @@ def create_task(body: TaskSchema, db: Session):
 def get_tasks(db: Session):
     tasks = db.query(TaskModel).all()
     return {"data": tasks}
+<<<<<<< HEAD
 
 
 def get_one_task(task_id: int, db: Session):
@@ -46,3 +50,5 @@ def delete_task(task_id: int, db: Session):
     db.delete(one_task)
     db.commit()
     return {"status": "task deleted"}
+=======
+>>>>>>> 1d515bba65edb3354eab3b22e65f162bf92477f0
