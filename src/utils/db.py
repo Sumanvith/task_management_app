@@ -8,9 +8,20 @@ engine = create_engine(url=settings.DB_CONNECTION)
 LocalSession = sessionmaker(bind=engine)
 
 
-def get_db():
+"""def get_db():
     session = LocalSession()
     try:
         yield session
     except:
+        session.close()"""
+
+
+def get_db():
+    session = LocalSession()
+    try:
+        yield session
+    except Exception:
+        session.rollback()
+        raise
+    finally:
         session.close()
