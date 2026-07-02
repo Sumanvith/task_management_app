@@ -1,8 +1,5 @@
 from sqlalchemy import Column, String, Integer, DateTime, Boolean
 from src.utils.db import Base
-import jwt
-from jwt.exceptions import InvalidTokenError
-from pwdlib import PasswordHash
 
 
 class UserModel(Base):

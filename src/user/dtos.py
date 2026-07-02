@@ -6,3 +6,9 @@ class UserScheme(BaseModel):
     username: str
     password: str
     email: str
+
+
+class UserResponseScheme(BaseModel):
+    name: str
+    username: str
+    email: str
